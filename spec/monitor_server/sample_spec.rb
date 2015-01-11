@@ -1,28 +1,20 @@
 require 'spec_helper'
 
-describe package('httpd'), :if => os[:family] == 'redhat' do
+describe package('sensu') do
   it { should be_installed }
 end
 
-describe package('apache2'), :if => os[:family] == 'ubuntu' do
-  it { should be_installed }
-end
-
-describe service('httpd'), :if => os[:family] == 'redhat' do
+describe service('sensu-server') do
   it { should be_enabled }
   it { should be_running }
 end
 
-describe service('apache2'), :if => os[:family] == 'ubuntu' do
+describe service('sensu-api') do
   it { should be_enabled }
   it { should be_running }
 end
 
-describe service('org.apache.httpd'), :if => os[:family] == 'darwin' do
-  it { should be_enabled }
-  it { should be_running }
-end
-
-describe port(80) do
-  it { should be_listening }
+describe service('sensu-client') do
+  it { should_not be_enabled }
+  it { should_not be_running }
 end
