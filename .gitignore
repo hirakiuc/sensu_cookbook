@@ -4,3 +4,5 @@ cookbooks/*
 tmp
 .bundle
 vendor/cookbooks/*
+.vagrant
+Vagrantfile

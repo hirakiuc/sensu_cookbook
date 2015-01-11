@@ -1,0 +1,20 @@
+{
+  "run_list": [
+    "recipe[sensu_roles::monitor]"
+  ],
+  "automatic": {
+    "ipaddress": "monitor_server"
+  },
+  "sensu": {
+    "rabbitmq": {
+      "port": 5671
+    }
+  },
+  "rabbitmq": {
+    "ssl": true,
+    "ssl_port": 5671,
+    "ssl_cacert": "/etc/rabbitmq/ssl/cacert.pem",
+    "ssl_cert": "/etc/rabbitmq/ssl/cert.pem",
+    "ssl_key": "/etc/rabbitmq/ssl/key.pem"
+  }
+}
