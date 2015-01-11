@@ -4,6 +4,7 @@ require 'tempfile'
 
 set :backend, :ssh
 
+=begin
 if ENV['ASK_SUDO_PASSWORD']
   begin
     require 'highline/import'
@@ -14,6 +15,7 @@ if ENV['ASK_SUDO_PASSWORD']
 else
   set :sudo_password, ENV['SUDO_PASSWORD']
 end
+=end
 
 host = ENV['TARGET_HOST']
 
@@ -24,7 +26,7 @@ config = Tempfile.new('', Dir.tmpdir)
 
 options = Net::SSH::Config.for(host, [config.path])
 
-options[:user] ||= 'vagrant'
+options[:user] = 'vagrant'
 
 set :host,        options[:host_name] || host
 set :ssh_options, options
@@ -36,4 +38,4 @@ set :ssh_options, options
 # set :env, :LANG => 'C', :LC_MESSAGES => 'C'
 
 # Set PATH
-# set :path, '/sbin:/usr/local/sbin:$PATH'
+set :path, '/sbin:/usr/local/bin:/usr/local/sbin:$PATH'
