@@ -1,6 +1,7 @@
 {
   "run_list": [
     "recipe[sensu_roles::monitor]",
+    "recipe[sensu_roles::client]",
     "recipe[uchiwa]"
   ],
   "automatic": {
@@ -9,7 +10,8 @@
   "sensu": {
     "rabbitmq": {
       "port": 5671
-    }
+    },
+    "use_embedded_ruby": true
   },
   "rabbitmq": {
     "ssl": true,
