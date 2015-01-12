@@ -2,6 +2,9 @@ DEPENDENCIES
   sensu
   sensu_roles
     path: ../sensu_roles
+  uchiwa
+    git: https://github.com/sensu/uchiwa-chef.git
+    revision: 816f5b085bb9598079dc92a26710d69b418185bc
 
 GRAPH
   apt (2.6.0)
@@ -26,6 +29,9 @@ GRAPH
     yum (>= 0.0.0)
   sensu_roles (0.1.0)
     sensu (>= 0.0.0)
+  uchiwa (1.0.0)
+    apt (>= 0.0.0)
+    yum (>= 0.0.0)
   ulimit (0.3.2)
   windows (1.34.8)
     chef_handler (>= 0.0.0)
