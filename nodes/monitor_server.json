@@ -1,6 +1,7 @@
 {
   "run_list": [
-    "recipe[sensu_roles::monitor]"
+    "recipe[sensu_roles::monitor]",
+    "recipe[uchiwa]"
   ],
   "automatic": {
     "ipaddress": "monitor_server"
