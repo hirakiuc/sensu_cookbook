@@ -5,6 +5,26 @@ This cookbook cooks sensu monitor, sensu client.
 
 (Tthis cookbook contains only 1 node as sensu monitor and sensu client.)
 
+How To Use
+----------
+
+```
+$ git clone https://github.com/hirakiuc/sensu_cookbook.git
+$ cd sensu_cookbook
+$ bundle install --path .bundle
+$ bundle exec berks install
+
+1. Replace sensu ssl.json with instructions below.
+
+2. Prepare target host
+
+$ bundle exec knife solo prepare <user@hostname>
+
+3. Edit your node/xxx.json just like node/monitor_server.json
+
+$ bundle exex knife solo cook <user@hostname>
+```
+
 Requirements
 ------------
 
