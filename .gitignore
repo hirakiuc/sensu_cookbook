@@ -6,3 +6,6 @@ tmp
 vendor/cookbooks/*
 .vagrant
 Vagrantfile
+
+.kitchen/
+.kitchen.local.yml
