@@ -1,7 +1,9 @@
 sensu Cookbook
 ====================
 
-This cookbook makes sensu monitor, sensu client.
+This wrapper cookbook makes sensu monitor, sensu client.
+
+(Tthis cookbook contains only 1 node as sensu monitor and sensu client.)
 
 Requirements
 ------------
@@ -22,7 +24,7 @@ $ ./ssl_certs.sh generate
 -> generate new ssl.json
 ```
 
-### add sensu ssl.json as data bags
+### Add sensu ssl.json as data bags
 
 If you want to create sensu/ssl.json as non-encrypted data bags,
 
@@ -41,9 +43,11 @@ $ openssl rand -base64 512 | tr -d '\r\n' > encrypted_data_bag_secret
 $ bundle exec knife solo data bag create sensu ssl --json-file path/to/ssl.json --secret-file path/to/encrypted_data_bag_secret
 ```
 
-#### packages
+#### Packages
 
-- `sensu` - sensu_roles depends on [sensu-chef](https://github.com/sensu/sensu-chef) cookbook.
+- `sensu` - depends on [sensu-chef](https://github.com/sensu/sensu-chef) cookbook.
+- `sensu_roles` - depends on [sensu_roles](https://github.com/hirakiuc/sensu_roles) cookbook.
+- `uchiwa` - depends on [uchiwa](https://github.com/sensu/uchiwa-chef) cookbook.
 
 Attributes
 ----------
