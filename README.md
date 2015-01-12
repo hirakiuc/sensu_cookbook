@@ -1,7 +1,7 @@
 sensu Cookbook
 ====================
 
-This wrapper cookbook makes sensu monitor, sensu client.
+This cookbook cooks sensu monitor, sensu client.
 
 (Tthis cookbook contains only 1 node as sensu monitor and sensu client.)
 
